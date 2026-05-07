@@ -1,0 +1,27 @@
+COLOQUE SUA FOTO AQUI
+======================
+
+Salve sua foto exatamente como:
+
+    /public/me.jpg
+
+REQUISITOS PARA O EFEITO DISSOLUÇÃO FUNCIONAR BEM
+- Formato: JPG (preferido) ou PNG
+- Resolução: pelo menos 1200x1500px (vertical)
+- Enquadramento: rosto na metade superior, espaço de respiro à
+  direita (a foto se dissolve em código a partir do meio para a
+  direita)
+- Fundo escuro favorece o efeito (igual ao da foto que você enviou)
+- Nada de fundo transparente — a dissolução usa o canal alpha
+
+A foto que você anexou na conversa (rapaz de óculos, terno, fundo
+preto) é PERFEITA para esse efeito. Salve-a como /public/me.jpg.
+
+OPCIONAL — versão "deep" dedicada:
+Se quiser uma versão alternativa da foto (ex: com filtro azulado já
+aplicado), salve-a como /public/me-deep.jpg. Por padrão o site usa
+filtros CSS sobre a mesma imagem, o que já funciona muito bem.
+
+Enquanto não houver foto, o site exibe um placeholder em SVG e o
+restante da experiência (interatividade, cards, transições) já
+funciona normalmente.

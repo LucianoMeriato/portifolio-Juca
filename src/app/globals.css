@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --bg: #06080c;
+  --bg-elev: #0a0d14;
+  --bg-card: #10141d;
+  --fg: #f2f4f8;
+  --fg-soft: rgba(242, 244, 248, 0.72);
+  --fg-mute: rgba(242, 244, 248, 0.55);
+  --line: rgba(242, 244, 248, 0.08);
+  --line-strong: rgba(242, 244, 248, 0.16);
+  --accent: #4d8cff;
+  --accent-soft: #7aa6ff;
+  --accent-deep: #2861d8;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(77, 140, 255, 0.35);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-feature-settings: "ss01", "cv02", "cv11";
+    letter-spacing: -0.045em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        to right,
+        var(--line) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 30%,
+      transparent 75%
+    );
+  }
+
+  /* (efeito de reveal radial removido — hero estático) */
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(77, 140, 255, 0.45);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(77, 140, 255, 0.95);
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .nav-link[data-active="true"]::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

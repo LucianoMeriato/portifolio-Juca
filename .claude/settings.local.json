@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(mkdir -p /Users/lucianoheriquemeriatojunior/Desktop/portifolio-Juca/.claude)"
+    ]
+  }
+}
